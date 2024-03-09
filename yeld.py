@@ -1,6 +1,20 @@
-def gen():
-    for i in range(2, 10001):
-        yield i  # yield применяется там, где значение нужно отправить обратно вызывающей стороне. Но в отличие от return, выхода из функции в данном случае не происходит. Вместо этого, при возврате состояние функции запоминается.
+def find_word(f, word):
+    g_indx = 0
+    for line in f:
+        indx = 0
+        while(indx != -1):
+            indx = line.find(word, indx)
+            if indx > -1:
+                yield g_indx + indx
+                indx += 1
 
+        g_indx += len(line)
 
-gen = gen()
+try:
+    with open("kek.txt", encoding="utf-8") as file:
+        a = find_word(file, "kek" )
+        print(list(a))
+except FileNotFoundError:
+    print("Файл не найден")
+except:
+    print("Ошибка обработки файла!")
