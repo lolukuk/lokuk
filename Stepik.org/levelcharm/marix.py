@@ -1,10 +1,9 @@
-def verify(matrix):
-    def is_isolate(row,col):
-        print(row,col)
+import sys
 
-matrix = [
-    [0, 1, 0],
-    [1, 1, 1],
-    [0, 0, 0]
-]
-print(verify(matrix))
+# считывание списка из входного потока
+lst_in = list(map(str.strip, sys.stdin.readlines()))
+lst2D = []
+# здесь продолжайте программу (используйте список lst_in)
+# переменную lst_in не менять!
+for i in lst_in:
+    lst2D.append(i).split(",")

@@ -12,4 +12,5 @@ def get_list(s):
     """Функция для формирования списка целых значений"""
     return list(map(int,s.split()))
 
+s = get_list([1,2,3,4,5])
 print(s)
